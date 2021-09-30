@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
 		arg++
 	) {
 		char str[512];
-		snprintf(str, 512, "/usr/bad/bin/%s:%s", *arg + 2, getenv("PATH"));
+		snprintf(str, 512, "/usr/bad/%s/bin:%s", *arg + 2, getenv("PATH"));
 		setenv("PATH", str, true);
 	}
 
