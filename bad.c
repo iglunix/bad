@@ -10,7 +10,11 @@
 #define T "\t"
 #define USAGE \
 "Usage: " N \
-T	"%s [options] cmd" N
+T	"%s [options] cmd" N \
+N \
+"Example Usage: " N \
+T	"%s --gmake gmake" N
+
 
 int main(int argc, char **argv) {
 	char **last = argv + argc;
@@ -29,6 +33,6 @@ int main(int argc, char **argv) {
 	if (has_cmd) {
 		execvp(*arg, arg);
 	} else {
-		fprintf(stderr, USAGE, name);
+		fprintf(stderr, USAGE, name, name);
 	}
 }
